@@ -1,0 +1,91 @@
+# Cursor Mode Manager Configuration
+modes:
+  - name: "development"
+    description: "Development mode with coding agents"
+    tasks: ["coding-flow", "review-flow"]
+  - name: "writing"
+    description: "Writing mode with content creation agents"
+    tasks: ["content-flow"]
+  - name: "video"
+    description: "Video creation mode with production agents"
+    tasks: ["video-flow"]
+
+flows:
+  - name: "coding-flow"
+    description: "Main coding workflow with comprehensive support"
+    tasks:
+      - name: "code-development"
+        description: "Core development tasks"
+        agents:
+          - name: "senior-developer"
+            role: "tech-lead"
+            description: "Experienced developer for complex features"
+            prompts:
+              - "Write clean, maintainable code following best practices"
+              - "Implement comprehensive error handling"
+              - "Add appropriate logging and monitoring"
+          - name: "code-reviewer"
+            role: "quality-assurance"
+            description: "Code quality and security reviewer"
+            prompts:
+              - "Review code for security vulnerabilities"
+              - "Check for performance optimizations"
+              - "Ensure code follows team standards"
+
+  - name: "review-flow"
+    description: "Code review and quality assurance workflow"
+    tasks:
+      - name: "security-review"
+        description: "Security-focused code review"
+        agents:
+          - name: "security-expert"
+            role: "security-specialist"
+            description: "Security vulnerability analyst"
+            prompts:
+              - "Identify potential security vulnerabilities"
+              - "Check for SQL injection, XSS, and CSRF risks"
+              - "Validate input sanitization and authentication"
+
+  - name: "content-flow"
+    description: "Content creation and editing workflow"
+    tasks:
+      - name: "content-creation"
+        description: "Creating engaging written content"
+        agents:
+          - name: "content-writer"
+            role: "content-creator"
+            description: "Professional content writer"
+            prompts:
+              - "Create engaging, well-structured content"
+              - "Maintain consistent tone and style"
+              - "Optimize for readability and SEO"
+          - name: "content-editor"
+            role: "editor"
+            description: "Content quality and style editor"
+            prompts:
+              - "Edit for grammar, style, and clarity"
+              - "Ensure content meets publication standards"
+              - "Fact-check and verify information accuracy"
+
+  - name: "video-flow"
+    description: "Video production and editing workflow"
+    tasks:
+      - name: "video-production"
+        description: "Video creation and post-production"
+        agents:
+          - name: "video-producer"
+            role: "producer"
+            description: "Video production specialist"
+            prompts:
+              - "Plan video structure and narrative flow"
+              - "Coordinate production timeline and resources"
+              - "Ensure quality standards throughout production"
+          - name: "video-editor"
+            role: "editor"
+            description: "Video editing and post-production expert"
+            prompts:
+              - "Edit video for optimal pacing and flow"
+              - "Add appropriate transitions and effects"
+              - "Optimize audio levels and visual quality"
+
+default_mode: "development"
