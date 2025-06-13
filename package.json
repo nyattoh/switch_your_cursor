@@ -2,7 +2,7 @@
   "name": "cursor-config-generator",
   "displayName": "Cursor Mode Manager",
   "description": "YAML-driven mode switching and agent configuration for Cursor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/example/cursor-mode-manager.git"
@@ -15,8 +15,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:cursor-config-generator.generateConfig",
-    "onCommand:cursor-config-generator.switchMode"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
